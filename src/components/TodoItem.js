@@ -8,7 +8,9 @@ const completedStyle = {
   }
 
 class TodoItem extends React.Component {
-    
+  componentWillUnmount() {
+    alert("Item about to be deleted!");
+  }
   render() {
     // return <li><input type="checkbox" defaultChecked={this.props.todo.completed}  /> {this.props.todo.title}</li>
     const { completed, id, title } = this.props.todo
@@ -18,7 +20,9 @@ class TodoItem extends React.Component {
             <span style={completed ? completedStyle : null}>
                 {title}
             </span>
-            <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
+            {/* <button onClick={this.props.deleteTodoProps(id).bind(this)}>Delete</button> */}
+            <button  onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
+            {/* <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button> */}
         </li>
         )
   }

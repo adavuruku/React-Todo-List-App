@@ -2,13 +2,19 @@
   "name": "simple-todo-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://adavuruku.github.io/React-Todo-List-App/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+    "axios": "^0.21.0",
+    "gh-pages": "^3.1.0",
+    "node-speech": "^1.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "react-voice-recorder": "^2.0.1",
+    "text-to-speech-js": "^1.1.10",
     "uuid": "^8.3.1",
     "uuidv4": "^6.2.5",
     "web-vitals": "^0.2.4"
@@ -17,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
