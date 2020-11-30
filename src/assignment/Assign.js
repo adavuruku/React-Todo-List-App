@@ -12,9 +12,11 @@ class Assign extends React.Component {
 
     playsound=()=>{
         // TextToSpeech.talk("Hello Beautiful World!");
+        console.log("before", this.state.index)
         this.setState({
             "index":this.state.index < 4 ? this.state.index+=1:1
         })
+        console.log("after", this.state.index)
     }
 render() {
     return (
