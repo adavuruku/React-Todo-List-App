@@ -19,17 +19,17 @@
 // g.pop();
 // console.log(g)
 
-var indices = [];
-var array = ['a', 'b', 'a', 'c', 'a', 'd', 'b'];
-var element = 'b';
-var idx = array.indexOf(element);
-while (idx != -1) {
-  indices.push(idx);
-  idx = array.indexOf(element, idx + 1);
-}
-console.log(indices);
+// var indices = [];
+// var array = ['a', 'b', 'a', 'c', 'a', 'd', 'b'];
+// var element = 'b';
+// var idx = array.indexOf(element);
+// while (idx != -1) {
+//   indices.push(idx);
+//   idx = array.indexOf(element, idx + 1);
+// }
+// console.log(indices);
 
-console.log(array.indexOf('a', 4));
+// console.log(array.indexOf('a', 4));
 
 
 // Mount (constructot, getDeri, render, didmount)
@@ -67,30 +67,30 @@ console.log(array.indexOf('a', 4));
 // leo.push(4)
 // console.log(killo)
 
-let findPermutations = (string) => {
-    if (!string || typeof string !== "string"){
-      return "Please enter a string"
-    } else if (string.length < 2 ){
-      return string
-    }
+// let findPermutations = (string) => {
+//     if (!string || typeof string !== "string"){
+//       return "Please enter a string"
+//     } else if (string.length < 2 ){
+//       return string
+//     }
   
-    let permutationsArray = [] 
-    for (let i = 0; i < string.length; i++){
-        let char = string[i]
-        if (string.indexOf(char) != i) continue
-        let remainingChars = string.slice(0, i) + string.slice(i + 1, string.length)
-        console.log(remainingChars)
-        for (let permutation of findPermutations(remainingChars)){
-            permutationsArray.push(char + permutation)
-        }
-    }
-    return permutationsArray
-  }
+//     let permutationsArray = [] 
+//     for (let i = 0; i < string.length; i++){
+//         let char = string[i]
+//         if (string.indexOf(char) != i) continue
+//         let remainingChars = string.slice(0, i) + string.slice(i + 1, string.length)
+//         console.log(remainingChars)
+//         for (let permutation of findPermutations(remainingChars)){
+//             permutationsArray.push(char + permutation)
+//         }
+//     }
+//     return permutationsArray
+//   }
 
- sll = [[1,6,7], [2,3,7], [4,5,6, [23,7,1,[2,8]]]]
-sedo = sll.flat(Infinity)
+//  sll = [[1,6,7], [2,3,7], [4,5,6, [23,7,1,[2,8]]]]
+// sedo = sll.flat(Infinity)
 
-const red = sedo.reduce(5,+)
+// const red = sedo.reduce(5,+)
 //  console.log(sll.flat(Infinity))
 
 // let he = "Hello"
@@ -104,7 +104,7 @@ const red = sedo.reduce(5,+)
 // let s2 = sll.splice()
 // console.log(s2)
 
-console.log(findPermutations("abc"))
+// console.log(findPermutations("abc"))
 
 
 
@@ -115,3 +115,17 @@ console.log(findPermutations("abc"))
 //learn the tic tack toe and turin array
 
 //other array value
+
+
+var userInfo = {
+  name: "Mayank Gupta",
+  age: 30,
+  designation: "Developer"
+}
+
+// var cloneData = { ...userInfo };
+var cloneData = userInfo ;
+cloneData.name = 'Haqq U'
+if(cloneData == userInfo) {
+  console.log("Reference Comparison return true",userInfo)
+}

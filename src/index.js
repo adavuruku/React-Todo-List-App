@@ -1,30 +1,13 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-// import ToDoContainer from './components/TodoContainer'
-// import ToDoContainer from './componentsHook/TodoContainer'
-// import Form from './learning/Form'
-// import DifferentiateThis from './learning/DifferentiateThis'
-import ClickCounter from './hoc/ClickCounter'
-import HoverCounter from './hoc/HoverCounter'
-// import ContainerState from './hoc/ContainerState'
-
-
-import Assign from './assignment/Assign'
-// import RecorderContainer from './recorder/RecorderContainer'
+import App from './App';
+import ToDoContainer from './functionalComponent/TodoContainer'
+import AppContainer from './commentPractice.js/AppContainer';
 import reportWebVitals from './reportWebVitals';
 
-
-const element = <h1>Hello from Create React App</h1>
-
-//in hoc any props pass from here goes to 
-// the hoc component - the hoc component then pass it to 
-// the parameter components
-
 ReactDOM.render(<Fragment>
-    <HoverCounter name="Sherif"/>
-    <ClickCounter/>
+    <AppContainer/>
     </Fragment>, document.getElementById("root"))
 
 // If you want to start measuring performance in your app, pass a function

@@ -149,8 +149,8 @@ function Square(props){
     return null;
   }
   // ========================================
-  
-  ReactDOM.render(
-    <Game />,
-    document.getElementById('root')
-  );
+  module.exports = Game
+  // ReactDOM.render(
+  //   <Game />,
+  //   document.getElementById('root')
+  // );
