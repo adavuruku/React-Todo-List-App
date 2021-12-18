@@ -1,0 +1,107 @@
+<button onClick={(event) => this.handleClick(event)}>
+  {'Click me'}
+</button>
+
+handleClick = () => {
+  console.log('this is:', this)
+}
+
+<button onClick={this.handleClick}>
+  {'Click me'}
+</button>
+
+class Component extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    // ...
+  }
+}
+
+
+
+import React from 'react'
+
+class DevTool extends React.Component{
+    
+}
+
+export const hello = ()=>{
+
+}
+
+//pass argument to function
+
+bind function
+<button onClick={() => this.handleClick(id)} />
+<button onClick={this.handleClick.bind(this, id)} />
+
+arrow function
+<button onClick={this.handleClick(id)} />
+handleClick = (id) => () => {
+    console.log("Hello, your ticket number is", id)
+};
+
+// #######################################################
+// forward references mostly use for calling dialog components
+# the called component
+1. Any component receiving a ref (that will be reference in another component) should be wrapped with a forward ref
+forwardRef((props,ref) ->props of the component , and a variable representing the forward ref it received
+const CheckOutAddress = forwardRef(({locations},allAddressReff)=>{
+}
+
+2. when you export the component set that the component can accept forwardRef by adding properties {forwardRef:true}
+export default ({forwardRef:true},UpdateProductForm);
+
+3. A useImperative call back that returns the function or the action in the reference component the calling component can access.
+Note: allAddressReff is the variable you've defined to store the coming reference
+useImperativeHandle(allAddressReff, () => {
+        return {
+            changeShow: (element)=>{
+                setFormData({...element,productCategory:element.Category.categoryId,productId:element.inventoryId})
+                setimgSrc(element.productImage)
+                // console.log(element)
+                handleShow()
+            }
+        }
+    });
+
+
+# the calling component
+
+1. create a useRef variable
+const callPayment = useRef()
+
+2. import the component and create its instance in your component and forward the ref to the called component
+<UpdateProductForm ref={callPayment}/>
+
+3. to invoke the methods exposed by useImperative in the called component
+onClick={()=>callPayment.current.changeShow(element)}
+
+// #######################################################
+
+file upload
+const changeHandler = (event) => {
+        setSelectedFile(event.target.files[0]);
+        let url = URL.createObjectURL(event.target.files[0]);
+        setimgSrc(url)
+        setisImageChange(true)
+        console.log(url,event.target.files[0])
+    };
+
+const formDataHere = new FormData();
+
+formDataHere.append('productImage',selectedFile)
+const config = {headers:{'Content-Type':'multipart/form-data'}}
+const res = await axios.patch(`${baseUrl}/api/user/product/update`, formDataHere, config)
+
+const { productId, productName,productDescription,productPrice, productMeasure, productCategory, productPercent} = formData;
+const onChange = e =>{
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+}
+
+<Form onSubmit={e => e.preventDefault()}>
+</Form>
